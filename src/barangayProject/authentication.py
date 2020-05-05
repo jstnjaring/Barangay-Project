@@ -10,10 +10,10 @@ from .config import *
 #     page = page.get_next_page()
 
 
-user = auth.get_user_by_email("jstn.jaring@gmail.com")
-uid = format(user.uid)
-print()
-# custom_token = auth.create_custom_token(uid)
+# user = auth.get_user_by_email("jstn.jaring@gmail.com")
+# uid = user.uid
+custom_token = auth.create_custom_token("jstn.jaring@gmail.com")
+auth.verify_id_token(custom_token)
 
 # try:
 #     # Verify the ID token while checking if the token is revoked by

@@ -11,3 +11,8 @@ if (not len(firebase_admin._apps)):
     })
 
 ref = db.reference()
+
+user = auth.get_user_by_email("jstn.jaring@gmail.com")
+uid = format(user.uid)
+custom_token = auth.create_custom_token(uid)
+auth.verify_id_token(uid)
